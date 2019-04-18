@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Exemple navigation vuejs</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="./index.css">
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    </head>
+
+
+    <body>
+        <main class="container">
+            <div id="app">
+                <div class="row">
+                    <div id="nav" class="col-3">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <!-- utilisez le composant router-link pour la navigation. -->
+                                <!-- spécifiez le lien en le passant à la prop `to` -->
+                                <!-- `<router-link>` sera rendu en tag `<a>` par défaut -->
+                                <router-link to="/step-1" class="nav-link">Étape 1</router-link>
+                            </li>
+                            <li class="nav-item">
+                                <router-link to="/step-2" class="nav-link">Étape 2</router-link>
+                            </li>
+                            <li class="nav-item">
+                                <router-link to="/step-3" class="nav-link">Étape 3</router-link>
+                            </li>
+                            <li class="nav-item">
+                                <router-link to="/step-4" class="nav-link">Étape 4</router-link>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="content" class="col-9">
+                        <transition
+                            name="slide"
+                            mode="out-in"
+                        >
+                            <!-- balise pour le composant router-view -->
+                            <!-- le composant correspondant à la route sera rendu ici -->
+                            <router-view></router-view>
+                        </transition>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+    <script src="./index.js"></script>
+</html>
